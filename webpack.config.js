@@ -24,6 +24,14 @@ const config = {
   },
 
   module: {
+    loaders: [{
+      test: /\.js$/,
+      exclude: /\/node_modules\//,
+      loader: 'babel',
+      query: {
+        presets: ['airbnb'],
+      },
+    }],
     rules: [
       // All files ending .js and .jsx (except those in `node_modules`) that are required by webpack
       // will pass through `babel-loader`.

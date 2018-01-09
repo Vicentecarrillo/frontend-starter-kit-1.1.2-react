@@ -13,9 +13,10 @@ module.exports = function(config) {
   config.set({
     basePath: '',
 
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine-ajax','jasmine'],
 
     plugins: [
+      require('karma-jasmine-ajax'),
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-mocha-reporter'),
@@ -46,11 +47,11 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['HeadlessChromeNoSecurity'],
+    browsers: ['Chrome', 'Chrome_without_security'],
     customLaunchers: {
-      HeadlessChromeNoSecurity: {
-        base: 'ChromeHeadless',
-        flags: ['--no-sandbox', '--disable-web-security']
+      Chrome_without_security: {
+        base: 'Chrome',
+        flags: ['--disable-web-security']
       }
     },
     singleRun: true,
