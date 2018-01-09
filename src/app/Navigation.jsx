@@ -12,6 +12,9 @@ const Navigation = () => (
         <li className='nav-item'>
           <Link to={`/about`} className='nav-link' activeClassName='active'>About</Link>
         </li>
+        <li className='nav-item'>
+          <Link to={`/feed`} className='nav-link' activeClassName='active'>Feed</Link>
+        </li>
       </ul>
     </div>
   </nav>
