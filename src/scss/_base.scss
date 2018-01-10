@@ -1,3 +1,12 @@
+$dark-primary-color: #0288D1;
+$light-primary-color: #B3E5FC;
+$primary-color: #03A9F4;
+$text-icons-color: #FFFFFF;
+$accent-color: #607D8B;
+$primary-text-color: #212121;
+$secondary-text-color: #757575;
+$divider-color: #BDBDBD;
+
 html,
 body,
 body > .container {
@@ -9,5 +18,131 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+}
+
+.blogfeed {
+  .posts {
+    padding-top: 15px;
+  }
+
+  a.feedpostlink {
+    text-decoration: none;
+  }
+
+  .feedpost {
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    .inner-content {
+      h4 {
+        border-bottom: solid 1px;
+        padding-bottom: 10px;
+      }
+
+      padding: 15px;
+      background-color: $primary-color;
+      color: $text-icons-color;
+      border-radius: 10px;
+    }
+  }
+}
+
+.blogheader {
+  .post-meta-data {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    .meta-data-left {
+      display: block;
+      flex: 9;
+    }
+    .meta-data-right {
+      flex: 3;
+    }
+
+    .blog-description {
+      color: $secondary-text-color;
+    }
+  }
+}
+
+.blogpost {
+  .blogheader {
+     .post-meta-data {
+       border-bottom: solid 1px;
+       padding-bottom: 15px;
+     }
+  }
+  .content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.comments {
+  padding: 15px;
+
+  .comment-container {
+    .comment {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #BDBDBD;
+
+      .inner-comment {
+        .comment-header {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .comment-content {
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+
+        .comment-reply-btn {
+          color: $dark-primary-color;
+        }
+      }
+    }
+
+    .comment-reply-form {
+      padding: 20px 0px 20px 0px;
+
+      .comment-reply-header {
+        display: flex;
+        align-items: baseline;
+
+        .cancel-reply::after {
+          content: "\f00d";
+          color: $dark-primary-color;
+          font-family: FontAwesome;
+          margin-left: 10px;
+          font-size: 18px;
+        }
+
+        a.cancel-reply {
+          cursor: pointer;
+          padding-left: 10px;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .comment-children {
+      padding-left: 15px;
+    }
+  }
+}
+
+.comment-form {
+  label {
+    display: block
+  }
+
+  .btn.comment-submit {
+    background-color: $dark-primary-color;
+    color: $text-icons-color;
   }
 }
